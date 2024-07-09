@@ -4,13 +4,11 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../redux/store";
 import { increment, decrement, setUser, clearUsers } from "../redux/store";
-import { useRouter } from "next/navigation";
 
 const SetCounter = () => {
   const count = useSelector((state: RootState) => state.counter.count);
   const users = useSelector((state: RootState) => state.counter.users);
   const dispatch = useDispatch<AppDispatch>();
-  const { push } = useRouter();
 
   console.log("Current count:", count); // Debugging
 
